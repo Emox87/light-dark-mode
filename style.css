@@ -92,6 +92,7 @@ a:focus {
 
 /* About Section */
 .about-container {
+  margin-top: 4rem;
   display: flex;
 }
 
