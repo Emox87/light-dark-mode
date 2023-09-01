@@ -81,7 +81,8 @@ a:visited  {
 }
 
 a:hover,
-a:focus {
+a:focus,
+a.active {
   color: var(--on-background);
   border-bottom: .3rem solid;
 }

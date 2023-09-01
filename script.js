@@ -5,6 +5,7 @@ const image1 = document.getElementById('image1');
 const image2 = document.getElementById('image2');
 const image3 = document.getElementById('image3');
 const textBox = document.getElementById('text-box');
+const links = document.querySelectorAll('a');
 
 const darkThemeObj = {
   name: 'dark',
@@ -21,6 +22,15 @@ const lightThemeObj = {
     toggleText: 'Light Mode',
     toggleIcon: 'fa-sun'
 };
+
+function swtichActiveTab(event) {
+    for (let i = 0; i < links.length; i++) {
+        if (links[i].classList.length > 0) {
+            links[i].classList.remove('active');
+        }
+    }
+    event.target.classList.add('active')
+}
 
 // Dark or Light Images
 function imageMode(color) {
@@ -52,6 +62,10 @@ function switchTheme(e) {
 
 // Event Listener
 toggleSwitch.addEventListener('change', switchTheme);
+for(let i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', (e) => swtichActiveTab(e));
+}
+
 
 // Check Localstorage for theme
 const currentTheme = localStorage.getItem('theme');
